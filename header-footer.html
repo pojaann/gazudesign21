@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAZU &mdash; Komponen Header &amp; Footer</title>
+  
+  <!-- Modern Typography: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- GAZU Modern Stylesheet -->
+  <link rel="stylesheet" href="assets/css/gazu.css">
+  <style>
+    /* Demo content canvas for showcasing Header and Footer components */
+    .demo-canvas {
+      padding: clamp(60px, 8vw, 120px) 0;
+      text-align: center;
+      background-color: var(--bg-primary);
+    }
+    .demo-canvas__badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 6px 14px;
+      background: #111111;
+      color: #FFFFFF;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .demo-canvas__title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .demo-canvas__desc {
+      font-size: 1rem;
+      color: #666666;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .demo-canvas__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================================
+       1. TOP PROMO BAR (BARIS PALING ATAS)
+       Teks promo tipis 'FREE DELIVERY ON ORDERS ABOVE 999' dengan latar belakang hitam dan teks putih
+       ======================================================================= -->
+  <div class="top-bar" role="region" aria-label="Announcement">
+    <div class="container top-bar__container">
+      <div class="top-bar__promo">
+        <span>FREE DELIVERY ON ORDERS ABOVE 999</span>
+      </div>
+      <nav class="top-bar__links" aria-label="Quick links">
+        <a href="#app">Download App</a>
+        <span class="top-bar__divider">|</span>
+        <a href="#track">Track Order</a>
+        <span class="top-bar__divider">|</span>
+        <a href="#help">Help</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       2. MENU NAVIGASI ATAS & LOGO GAZU
+       - Kategori di sisi kiri ('MEN', 'WOMEN', 'KIDS', 'BEAUTY')
+       - Logo teks besar 'GAZU' di tengah-tengah dengan font tegas dan tebal
+       - Utilitas di sisi kanan ('SEARCH', 'LOGIN', 'WISHLIST', 'CART (0)')
+       ======================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__container">
+      
+      <!-- Kategori di sisi kiri -->
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <a href="#men" class="nav-link">MEN</a>
+        <a href="#women" class="nav-link">WOMEN</a>
+        <a href="#kids" class="nav-link">KIDS</a>
+        <a href="#beauty" class="nav-link">BEAUTY</a>
+      </nav>
+
+      <!-- Logo teks besar 'GAZU' di tengah-tengah -->
+      <div class="site-header__logo">
+        <a href="index.html" class="brand-logo" aria-label="GAZU Home">GAZU</a>
+      </div>
+
+      <!-- Utilitas di sisi kanan -->
+      <div class="site-header__utilities">
+        <a href="#search" class="utility-link" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>SEARCH</span>
+        </a>
+
+        <a href="#login" class="utility-link" aria-label="Account Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>LOGIN</span>
+        </a>
+
+        <a href="#wishlist" class="utility-link" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span>WISHLIST</span>
+        </a>
+
+        <a href="#cart" class="utility-link" aria-label="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-2z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>CART (0)</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       MAIN CONTENT DEMO CANVAS
+       ======================================================================= -->
+  <main class="demo-canvas">
+    <div class="container">
+      <span class="demo-canvas__badge">Design Showcase</span>
+      <h1 class="demo-canvas__title">Header &amp; Footer Components</h1>
+      <p class="demo-canvas__desc">
+        Halaman ini menampilkan komponen Header (baris promo tipis hitam, menu kategori kiri, logo GAZU di tengah, dan utilitas kanan) serta komponen Footer di bagian bawah dengan 4 ikon layanan sejajar horizontal sesuai acuan <code>gazu-design.jpg</code>.
+      </p>
+      <div class="demo-canvas__actions">
+        <a href="index.html" class="btn-primary">Lihat Full Landing Page (index.html)</a>
+        <a href="gazu.html" class="btn-link">Lihat gazu.html</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       3. FOOTER DI BAGIAN BAWAH
+       4 Ikon Layanan Sejajar Horizontal:
+       - Fast Delivery
+       - Easy Returns
+       - Quality Assured
+       - Secure Payment
+       Lengkap dengan teks deskripsi singkat di bawah masing-masing ikon.
+       ======================================================================= -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <!-- 4 Ikon Layanan Sejajar Horizontal -->
+      <div class="features-grid">
+        
+        <!-- Feature 1: Fast Delivery -->
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="4" width="14" height="12" rx="1"></rect>
+              <path d="M15 8h4l3 3v5h-7V8z"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4 class="feature-title">FAST DELIVERY</h4>
+            <p class="feature-desc">Quick &amp; safe delivery</p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Easy Returns -->
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.29 7 12 12 20.71 7"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              <path d="M16 16a3 3 0 1 0 3 3"></path>
+              <polyline points="19 16 19 19 16 19"></polyline>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4 class="feature-title">EASY RETURNS</h4>
+            <p class="feature-desc">Within 15 days</p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Quality Assured -->
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4 class="feature-title">QUALITY ASSURED</h4>
+            <p class="feature-desc">Best fashion, best quality</p>
+          </div>
+        </div>
+
+        <!-- Feature 4: Secure Payment -->
+        <div class="feature-item">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="11" width="16" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              <path d="M10 15.5l2 2 2-2"></path>
+              <path d="M12 17.5v2.5"></path>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4 class="feature-title">SECURE PAYMENT</h4>
+            <p class="feature-desc">100% secure checkout</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 GAZU Worldwide. All rights reserved.</p>
+        <p>Design Reference: gazu-design.jpg</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Script -->
+  <script src="assets/js/gazu.js"></script>
+</body>
+</html>
